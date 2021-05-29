@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axiosInstance from '../utilities/axiosInstance' ;
+const {axiosInstance} = require('../utilities/axiosInstance');
 const url = "https://srinivas-loan-management.herokuapp.com/";
 
 const useFindUser = () => {
