@@ -1,6 +1,5 @@
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from  '@fortawesome/free-solid-svg-icons';
-import { login } from '../services/auth.service';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Form from '../components/Form';
@@ -8,6 +7,7 @@ import { UserContext } from '../hooks/UserContext';
 import { ReactComponent as Pic } from '../assets/home.svg';
 
 const { handleEmailChange, handlePasswordChange } = require('../utilities/handleChanges');
+const { login } = require('../services/auth.service');
 
 const Login = (props) => {
 
