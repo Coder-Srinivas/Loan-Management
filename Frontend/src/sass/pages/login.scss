@@ -1,0 +1,13 @@
+.login{
+    display: flex;
+    align-items: center;
+    text-align:center;
+    justify-content: center;
+}
+
+@media (max-width: $max-width){
+    .login{
+    flex-direction: column-reverse;
+    margin: 0 1.4rem;
+    }
+}

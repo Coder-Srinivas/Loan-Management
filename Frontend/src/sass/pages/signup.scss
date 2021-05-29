@@ -1,0 +1,12 @@
+.signup{
+    display: flex;
+    align-items: center;
+    text-align:center;
+    justify-content: center;
+}
+@media (max-width: $max-width){
+    .signup{
+        flex-direction: column-reverse;
+        
+         }
+}

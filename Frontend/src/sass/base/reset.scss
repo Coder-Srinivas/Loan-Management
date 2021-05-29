@@ -12,18 +12,15 @@ html {
     font-size: 16px;
 }
 .App{
-    padding: 0 10rem;
+    padding: 0 2rem;
     background-color: $theme-color;
     color: $font-color-main;
     min-height: 100vh;
-    text-align: center;
-    display: flex;
-    align-items: center;
 }
 @media (max-width: $max-width) {
     .App {
         padding: 0 0;
-        flex-direction: column-reverse;
+        
     }
 }
 @media (max-width: $min-width) {

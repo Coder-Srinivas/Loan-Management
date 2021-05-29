@@ -12,4 +12,16 @@ const validateNumber = (number) => {
     return number.length === 10;
 }
 
-module.exports = { validateEmail, validatePassword, validateNumber }
+const validateAmount = (amount) => {
+    return amount >= 10000;
+}
+
+const validateDate = (date) => {
+    const diff = new Date(date) - new Date();
+    return diff > 0;
+}
+
+const validateEmi = (emi) => {
+    return emi > 0;
+}
+module.exports = { validateEmail, validatePassword, validateNumber, validateAmount, validateDate, validateEmi };

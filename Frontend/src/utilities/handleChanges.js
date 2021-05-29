@@ -1,4 +1,4 @@
-const { validateEmail, validatePassword, validateNumber } = require('./validation');
+const { validateEmail, validatePassword, validateNumber, validateAmount, validateDate, validateEmi } = require('./validation');
 
 const handleChange = (value, setValue) => {
     setValue(value);
@@ -49,4 +49,50 @@ const handleNumberChange = (number, setNumber, setErrors) => {
     }
 }
 
-module.exports = { handleEmailChange, handlePasswordChange, handleChange, handleNumberChange }
+const handleAmountChange = (amount, setAmount, setErrors) => {
+    handleChange(amount, setAmount);
+    if(!validateAmount(amount)){
+        return setErrors(prev => ({
+            ...prev,
+            amount: 'Loan below 10000 cannot be processed'
+        }))
+    }else{
+        setErrors(prev => ({
+            ...prev,
+            amount: ''
+        }))
+    }
+}
+
+const handleDateChange = (date, setDate, setErrors) => {
+    handleChange(date, setDate);
+    if(!validateDate(date)){
+        return setErrors(prev => ({
+            ...prev,
+            date: 'You cannot enter a past date'
+        }))
+    }else{
+        setErrors(prev => ({
+            ...prev,
+            date: ''
+        }))
+    }
+}
+
+const handleEmiChange = (emi, setEmi, setErrors) => {
+    handleChange(emi, setEmi);
+    if(!validateEmi(emi)){
+        return setErrors(prev => ({
+            ...prev,
+            emi: 'EMI Should be positive value'
+        }))
+    }else{
+        setErrors(prev => ({
+            ...prev,
+            emi: ''
+        }))
+    }
+}
+
+module.exports = { handleEmailChange, handlePasswordChange, 
+    handleChange, handleNumberChange, handleAmountChange, handleDateChange, handleEmiChange }

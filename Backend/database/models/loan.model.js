@@ -3,10 +3,6 @@ const { Schema } = mongoose;
 
 // Loan Schema 
 const LoanSchema = new Schema({
-    address: {
-        type: String,
-        required: true
-    },
     amount: {
         type: Number,
         required: true
@@ -29,6 +25,10 @@ const LoanSchema = new Schema({
         required: true
     },
     payableAmount: {
+        type: Number,
+        required: true
+    },
+    interest: {
         type: Number,
         required: true
     },

@@ -5,6 +5,7 @@ import { faPhone } from  '@fortawesome/free-solid-svg-icons';
 import { register } from '../services/auth.service';
 import { useState, useContext } from 'react';
 import Form from '../components/Form';
+import { ReactComponent as Pic } from '../assets/home.svg';
 
 import { UserContext } from '../hooks/UserContext';
 const { handleChange, handleEmailChange, handlePasswordChange, handleNumberChange } = require('../utilities/handleChanges');
@@ -17,10 +18,12 @@ const SignUp = (props) => {
     const [password, setPassword] = useState('');
     const [number, setNumber] = useState('');
     const [loading, setLoading] = useState(false);
+    const [address, setAddress] = useState('');
     const [errors, setErrors] = useState({
         email: '',
         password: '',
         number: '',
+        address: '',
         form: ''
     })
 
@@ -50,6 +53,14 @@ const SignUp = (props) => {
             error: errors.number
         },
         {
+            type: "address",
+            title: "Address",
+            placeholder: "Enter your Address",
+            onChange: (value) => {handleChange(value, setAddress)},
+            icon: '',
+            error: errors.address
+        },
+        {
             type: "password",
             title: "Password",
             placeholder: "Enter your Password", 
@@ -61,12 +72,12 @@ const SignUp = (props) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if(errors.email !== '' || errors.password !== ''){
+        if(errors.email !== '' || errors.password !== '' || errors.number !== ''){
             return;
         }
 
         setLoading(true);
-        const data = await register(username, email, number, password);
+        const data = await register(username, email, number, password, address);
         setLoading(false);
 
         if(!data.success){
@@ -82,17 +93,20 @@ const SignUp = (props) => {
         }))
 
         setUser(data.user);
-        props.history.push('/loan');
+        props.history.push('/profile');
     }
     
     return(
-        <Form
-            title = "Sign Up"
-            data = {data}
-            onFormSubmit = {handleSubmit}
-            error = {errors.form}
-            loading = {loading}
-        />
+        <div className="signup">
+            <Pic/>
+            <Form
+                title = "Sign Up"
+                data = {data}
+                onFormSubmit = {handleSubmit}
+                error = {errors.form}
+                loading = {loading}
+            />
+        </div>
     )
 }
 

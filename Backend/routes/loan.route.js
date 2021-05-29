@@ -3,22 +3,26 @@ const Loan = require('../database/models/loan.model');
 const User = require('../database/models/user.model');
 const router = express.Router();
 const { auth } = require('../middleware/auth');
-const calcAmount = require('../utilities/loan');
+const { calcAmount } = require('../utilities/loan');
 
 // Creating new loan
 router.post("/new/loan", auth, async (req, res) => {
     try{
-        const payableAmount = calcAmount(req.body.amount, req.body.emi/12);
+        const {payableAmount, interest} = calcAmount(parseInt(req.body.amount), req.body.emiDuration/12);
+        const date = new Date(req.body.startDate);
+        const expiryDate = new Date(date.setMonth(date.getMonth() + req.body.emiDuration/12));
         const loan = new Loan({
             owner: req.id,
             ...req.body,
-            payableAmount: payableAmount.amount
+            payableAmount,
+            interest,
+            expiryDate
         });
         await loan.save();
         res.status(201).send({
             success: true,
             message: "New loan created",
-            loan
+            loan,
         })
     }catch(error){
         const message = error.message;

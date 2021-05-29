@@ -1,14 +1,13 @@
 const calcAmount = (principal, time) => {
     const rateOfInterest = 5/100;
-
     //Calculating Simple Interest
-    const interest = (principal * time * rateOfInterest)/100;
+    const interest = (principal * time * rateOfInterest);
     const amount = principal + interest;
 
     return {
         interest,
-        amount
+        payableAmount: amount
     }
 }
 
-module.exports.calcAmount = calcAmount;
+module.exports = { calcAmount };

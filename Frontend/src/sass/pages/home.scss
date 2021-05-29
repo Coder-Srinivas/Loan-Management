@@ -1,4 +1,8 @@
 .home{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
  &-next{
     display: flex;
     flex-direction: column;
@@ -7,5 +11,6 @@
 @media (max-width: $max-width) {
     .home{
         margin-top: 5rem;
+        flex-direction: column;
     }
 }

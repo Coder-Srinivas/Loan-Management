@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import SignUp from './pages/Signup';
+import Profile from './pages/Profile';
 import Loan from './pages/CreateLoan';
-import Applied from './pages/Applied';
 
 // Custom Hooks
 import { UserContext } from './hooks/UserContext';
@@ -15,24 +15,21 @@ import useFindUser from './hooks/useFindUser';
 import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
 
-//assets
-import { ReactComponent as Pic } from './assets/home.svg';
-
 function App() {
 
+  // Fetches the user based on the HTTP only cookie
   const [user, setUser, loading] = useFindUser();
 
   return (
     <UserContext.Provider value = {{ user, setUser, loading }}>
       <div className="App">
-        <Pic/>
         <Router>
           <Switch>
-            <Route exact path="/" render={(props) => <Home {...props}/>}/>
+            <Route exact path="/" component={Home}/>
             <PublicRoute exact path="/login" component={Login}/>
             <PublicRoute exact path="/signup" component={SignUp}/>
-            <PrivateRoute exact path="/loan" component={Loan}/>
-            <PrivateRoute exact path="/applied"component={Applied}/>
+            <PrivateRoute exact path="/profile" component={Profile}/>
+            <PrivateRoute exact path="/new/loan" component={Loan}/>
           </Switch>
           </Router>
       </div>

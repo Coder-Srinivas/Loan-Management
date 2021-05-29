@@ -18,14 +18,13 @@ const StartScreen = () => {
         await logout();
         setUser(null);
     }
-  return (
-
-      <div className="start-container">
-       {!loading? <button className="button" onClick={() => (handleClick())}>
-                    {user? "Logout" : "Login"}
-        </button>: <Loader size="2"/>}
-      </div>
-  );
+    return (
+        <div className="start-container">
+            {!loading? <button className="button" onClick={() => (handleClick())}>
+                            {user? "Logout" : "Login"}
+                </button>: <Loader size="2"/>}
+        </div>
+    );
 };
 
 export default StartScreen;

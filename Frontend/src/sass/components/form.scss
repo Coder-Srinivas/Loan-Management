@@ -1,21 +1,68 @@
 .form{
 &-container{
+    min-width: 25vw;
+    max-width:25vw;
+    font-family: 'Roboto', sans-serif;
+    background-color: $theme-color;
+    padding: 1.3rem;
+    border-radius: 1.5rem;
+    box-shadow: $theme-color2 0px 20px 30px -10px;
+    &-input{
+        &-container{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+            &--first{
+                display: flex;
+                margin-bottom: 0.5rem;
+                &-icon{
+                    margin-left: 0.5rem;
+                }
+            }
+            &--second{
+                border-radius: 1.7rem;
+                padding: 0.5rem 1rem;
+                margin-bottom: 1.2rem;
+            }
+        }
+    }
     &-title{
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.7rem;
+        margin-bottom: 2.5rem;
+        color: $theme-color2;
     }
     &-additional{
         margin-top: 1.2rem;
     }
-    .error{
-        margin: 1rem 1.5rem 0 1.5rem;
+    &-desc{
+        &--2{
+            color: $theme-color3;
+            link{
+            text-decoration: none;
+            }
+        }
     }
 }
+}
+.error{
+    text-align: center;
+    display: block;
+    background-color: rgba(255, 0, 0, 0.1);
+    font-size: 1rem;
+    margin-top: .8rem;
+    padding: .5rem;
+    border-radius: 1rem;
+    max-width: 22rem;
 }
 
 @media (max-width: $max-width) {
     .form{
-    margin-top: 5rem;
-    margin-bottom: -2rem;
+
+        &-container{
+            min-width: 90vw;
+            max-width: 90vw;
+            padding: 3rem;
+        }
+    margin-top: 10rem;
     }
 }

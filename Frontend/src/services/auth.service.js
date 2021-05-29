@@ -12,12 +12,13 @@ const login = async (email, password) => {
     });
 }
 
-const register = async (username, email, number, password) => {
+const register = async (username, email, number, password, address) => {
     return await axiosInstance.post(url + 'signup', {
         email,
         password,
         username,
-        number
+        number,
+        address
     }).then((response) => {
         return response.data;
     }).catch((error) => {

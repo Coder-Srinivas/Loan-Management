@@ -5,6 +5,7 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Form from '../components/Form';
 import { UserContext } from '../hooks/UserContext';
+import { ReactComponent as Pic } from '../assets/home.svg';
 
 const { handleEmailChange, handlePasswordChange } = require('../utilities/handleChanges');
 
@@ -25,10 +26,6 @@ const Login = (props) => {
             <div className='form-container-additional'>
                 <div className='form-container-desc--2'>
                     New User? <Link to='/signup'> Click here</Link>
-                </div>
-
-                <div className='form-container-desc--2'>
-                    <Link to='/reset/forgot'>Forgot Password?</Link>
                 </div>
             </div>
         )
@@ -75,17 +72,20 @@ const Login = (props) => {
         }))
 
         setUser(data.user);
-        props.history.push('/loan')
+        props.history.push('/profile')
     }
     return(
-        <Form
-            title = "Login"
-            data = {data}
-            onFormSubmit = {handleSubmit}
-            message = {message}
-            error = {errors.form}
-            loading = {loading}
-        />
+        <div className="login">
+            <Pic/>
+            <Form
+                title = "Login"
+                data = {data}
+                onFormSubmit = {handleSubmit}
+                message = {message}
+                error = {errors.form}
+                loading = {loading}
+            />
+        </div>
     )
 }
 

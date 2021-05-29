@@ -21,6 +21,10 @@ const UserSchema = new Schema({
         unique: true,
         dropDups: true
     },
+    address: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true,
