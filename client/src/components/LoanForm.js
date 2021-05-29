@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Form from './Form';
 
-const { createLoan } = require('../services/loan.service');
-const { handleChange, handleAmountChange, handleDateChange, handleEmiChange } = require('../utilities/handleChanges');
+import { createLoan } from '../services/loan.service';
+import { handleChange, handleAmountChange, handleDateChange, handleEmiChange } from '../utilities/handleChanges';
 
 const LoanForm = () => {
 

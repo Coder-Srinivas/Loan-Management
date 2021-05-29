@@ -94,5 +94,5 @@ const handleEmiChange = (emi, setEmi, setErrors) => {
     }
 }
 
-module.exports = { handleEmailChange, handlePasswordChange, 
+export { handleEmailChange, handlePasswordChange, 
     handleChange, handleNumberChange, handleAmountChange, handleDateChange, handleEmiChange }

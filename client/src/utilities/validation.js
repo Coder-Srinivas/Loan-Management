@@ -24,4 +24,4 @@ const validateDate = (date) => {
 const validateEmi = (emi) => {
     return emi > 0;
 }
-module.exports = { validateEmail, validatePassword, validateNumber, validateAmount, validateDate, validateEmi };
+export { validateEmail, validatePassword, validateNumber, validateAmount, validateDate, validateEmi };

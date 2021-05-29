@@ -22,4 +22,4 @@ const getLoans = async () => {
     });
 }
 
-module.exports = { createLoan, getLoans }
+export { createLoan, getLoans }

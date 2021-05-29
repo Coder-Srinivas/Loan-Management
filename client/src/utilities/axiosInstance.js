@@ -5,4 +5,4 @@ const axiosInstance = axios.create({
     baseURL: url
 })
 
-module.exports = axiosInstance;
+export {axiosInstance};

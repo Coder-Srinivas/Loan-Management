@@ -1,9 +1,9 @@
 import { useEffect, useState, useContext } from 'react';
 import Loading from './Loading';
+import { logout } from '../services/auth.service';
+import { getLoans } from '../services/loan.service';
 import DashBoard from '../components/Dashboard';
 import { UserContext } from '../hooks/UserContext';
-const { getLoans } = require('../services/loan.service');
-const { logout } = require('../services/auth.service');
 
 const Profile = (props) => {
 
