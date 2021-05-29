@@ -1,0 +1,11 @@
+.home{
+ &-next{
+    display: flex;
+    flex-direction: column;
+ }
+}
+@media (max-width: $max-width) {
+    .home{
+        margin-top: 5rem;
+    }
+}

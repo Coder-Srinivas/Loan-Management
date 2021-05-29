@@ -1,0 +1,12 @@
+.button{
+    margin-top: 2rem;
+    padding: 0.4rem 1.4rem;
+    border-radius: 2rem;
+    background-color: $theme-color2;
+    color: $theme-color3;
+    border: 2px solid $theme-color3; 
+&:hover{
+     cursor: pointer;
+     transform: scale(1.05);
+    }
+}

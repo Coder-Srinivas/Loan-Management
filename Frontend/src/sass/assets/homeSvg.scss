@@ -1,0 +1,9 @@
+.homePic{
+    transform: scale(0.5);
+}
+
+@media (max-width: $min-width) {
+    .homePic{
+        transform: scale(0.3);
+    }  
+}

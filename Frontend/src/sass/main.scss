@@ -1,0 +1,15 @@
+//utilities
+@import './utilities/variables.scss';
+
+//base
+@import './base/reset.scss';
+
+//components
+@import './components/button.scss';
+@import './components/form.scss';
+
+//Pages
+@import './pages/home.scss';
+
+//assets
+@import './assets/homeSvg.scss';
