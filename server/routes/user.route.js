@@ -33,6 +33,7 @@ router.post("/signup", async (req, res) => {
             errorMessage = "Opps, something went wrong, try again.";
         }
 
+        console.log(message);
         res.status(400).send({
             success: false,
             message: errorMessage

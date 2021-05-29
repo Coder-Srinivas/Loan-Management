@@ -7,7 +7,7 @@ import { UserContext } from '../hooks/UserContext';
 
 const Profile = (props) => {
 
-    const [loans, setLoans] = useState(true);
+    const [loans, setLoans] = useState([]);
     const [loading, setLoading] = useState(true);
     const {user} = useContext(UserContext);
 

@@ -4,7 +4,7 @@ import Title from "./Title";
 //the array of loans is taken as the prop here, the title from the array is displayed here
  //and the rest of the details are sent as props to loandetails to further get rendered
 
-export default function Loans({loans}) {
+export default function Loans({loans=[]}) {
     return (
         <div className="loans">
             {loans.map((loan, index) => {
