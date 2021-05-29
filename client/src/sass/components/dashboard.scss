@@ -1,0 +1,16 @@
+.dash{
+    &-container{
+        &--1{
+        padding-top: 2rem;
+        padding-left: 5rem;
+        color: $theme-color2;
+        }
+        &--3{
+            padding-left: 5rem;
+        }
+    }
+}
+
+.logout-container {
+    float: right;
+}

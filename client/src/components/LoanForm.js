@@ -13,7 +13,6 @@ const LoanForm = () => {
     const [emi, setEmi] = useState('');
     const [loading, setLoading] = useState(false);
     const [fixed, setFixed] = useState('');
-    const [float, setFloat] = useState('');
 
     const [errors, setErrors] = useState({
         amount: '',
@@ -50,6 +49,7 @@ const LoanForm = () => {
         },
         {
             type: "radio",
+            name: "loanType",
             title: "Fixed",
             placeholder: "Fixed", 
             onChange: (value) => {handleChange(value, setFixed)}, 
@@ -58,9 +58,9 @@ const LoanForm = () => {
         },
         {
             type: "radio",
+            name: "loanType",
             title: "Floating",
             placeholder: "Floating", 
-            onChange: (value) => {handleChange(value, setFloat)}, 
             icon: '',
             error: ''
         },

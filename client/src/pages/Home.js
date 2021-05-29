@@ -7,8 +7,8 @@ const Home = () => {
         <div className="home">
             <Pic/>
             <div className="home-next">
-            <Title title = "Loan Application"/>
-            <StartScreen/>
+                <Title title = "Loan Application"/>
+                <StartScreen/>
             </div>  
         </div>
     )

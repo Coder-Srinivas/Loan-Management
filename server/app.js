@@ -27,8 +27,6 @@ app.use(express.json());
 app.use(userRouter);
 app.use(loanRouter);
 
-app.listen(8000, () => {
-    User.collection.deleteMany({});
-    Loan.collection.deleteMany({});
+app.listen(process.env.PORT || 8000, () => {
     console.log("Listening on port 8000")
 })

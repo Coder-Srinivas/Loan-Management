@@ -8,7 +8,7 @@ const PublicRoute = ({ component: Component, ...rest }) => {
     if(loading){
         return <Loading />
     }
-    return ( !user ? <Route {...rest} render={(props) => (<Component {...props} />)}/> : <Redirect to='/'/> )
+    return ( !user ? <Route {...rest} render={(props) => (<Component {...props} />)}/> : <Redirect to='/profile'/> )
 }
 
 export default PublicRoute

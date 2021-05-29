@@ -1,0 +1,28 @@
+.loans{
+    display: flex;
+    flex-wrap: wrap;
+    &-container{
+    min-width: 20vw;
+    max-width: 50vw;
+    margin: 5rem;
+    box-shadow: $theme-color2 0px 20px 30px -10px;
+    font-family: 'Roboto', sans-serif;
+    background-color: $theme-color;
+    padding: 1.3rem;
+    border-radius: 1.5rem;
+    &--1{
+        color: $theme-color3;
+        border-bottom: 2px solid $theme-color2;
+        margin-bottom: 1.5rem;
+    }
+    }
+}
+@media (max-width:$max-width){
+.loans{
+&-container{
+    min-width: 80vw;
+    max-width: 90vw;
+    margin: 3rem 1rem 3rem 1rem;
+}
+}
+}
