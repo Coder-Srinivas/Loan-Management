@@ -10,7 +10,7 @@ const Loan = require('./database/models/loan.model');
 require('dotenv').config()
 require('./database/connection');
 
-const clientUrl = process.env.DEV_REACT_URL || "http://localhost:3000";
+const clientUrl = process.env.DEV_REACT_URL || "https://loan-management.netlify.app";
 const app = express();
 
 //Middleware
