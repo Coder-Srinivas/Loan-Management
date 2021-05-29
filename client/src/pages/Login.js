@@ -7,7 +7,7 @@ import Form from '../components/Form';
 import { UserContext } from '../hooks/UserContext';
 import { ReactComponent as Pic } from '../assets/home.svg';
 
-import { handleEmailChange, handlePasswordChange } from ('../utilities/handleChanges');
+import { handleEmailChange, handlePasswordChange } from '../utilities/handleChanges';
 
 const Login = (props) => {
 
