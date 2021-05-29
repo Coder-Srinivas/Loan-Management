@@ -2,13 +2,13 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from  '@fortawesome/free-solid-svg-icons';
 import { faUser } from  '@fortawesome/free-solid-svg-icons';
 import { faPhone } from  '@fortawesome/free-solid-svg-icons';
-import { register } from '../services/auth.service';
 import { useState, useContext } from 'react';
 import Form from '../components/Form';
 import { ReactComponent as Pic } from '../assets/home.svg';
 
 import { UserContext } from '../hooks/UserContext';
 const { handleChange, handleEmailChange, handlePasswordChange, handleNumberChange } = require('../utilities/handleChanges');
+const {register} = require('../services/auth.service');
 
 const SignUp = (props) => {
 
