@@ -11,7 +11,8 @@ router.post("/signup", async (req, res) => {
 
         // Creating a http only cookie, which is used for authorization
         res.cookie('jwt', token, {
-            sameSite: 'strict',
+            sameSite: 'none', 
+            secure: true, 
             path: '/',
             httpOnly: true,
         })
@@ -35,6 +36,8 @@ router.post("/signup", async (req, res) => {
 
         console.log(message);
         res.status(400).send({
+            sameSite: 'none', 
+            secure: true, 
             success: false,
             message: errorMessage
         });
@@ -49,7 +52,6 @@ router.post("/login", async (req, res) => {
 
         // Creating a http only cookie, which is used for authorization
         res.cookie('jwt', token, {
-            sameSite: 'strict',
             path: '/',
             httpOnly: true,
         })

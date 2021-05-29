@@ -5,8 +5,6 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const userRouter = require('./routes/user.route');
 const loanRouter = require('./routes/loan.route');
-const User = require('./database/models/user.model');
-const Loan = require('./database/models/loan.model');
 require('dotenv').config()
 require('./database/connection');
 
