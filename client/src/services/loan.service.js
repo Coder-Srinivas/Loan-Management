@@ -1,5 +1,5 @@
 const axiosInstance = require('../utilities/axiosInstance');
-const url = process.env.BACKEND_URL || "http://localhost:8000/";
+const url = process.env.BACKEND_URL || "https://srinivas-loan-management.herokuapp.com/";
 
 const createLoan = async (amount, emiDuration, startDate, fixed) => {
     return await axiosInstance.post(url + 'new/loan', {
