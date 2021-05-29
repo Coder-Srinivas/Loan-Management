@@ -23,7 +23,7 @@ const Profile = (props) => {
             !loading ? <>           
                 <div>
                     <div className="logout-container">
-                        <button onClick={() => {logout(); window.location.reload();}} className="button">Logout</button>
+                        <button onClick={async () => {await logout(); window.location.reload();}} className="button">Logout</button>
                     </div>
                     <DashBoard owner={user.username} loanlist={loans}/>
                 </div>
