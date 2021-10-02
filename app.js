@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const path = require("path");
 const userRouter = require('./routes/user.route');
 const loanRouter = require('./routes/loan.route');
 require('dotenv').config()
@@ -24,6 +25,13 @@ app.use(express.json());
 //Routes
 app.use(userRouter);
 app.use(loanRouter);
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    });
+}
 
 app.listen(process.env.PORT || 8000, () => {
     console.log("Listening on port 8000")
