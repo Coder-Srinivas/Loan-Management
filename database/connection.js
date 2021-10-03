@@ -11,6 +11,8 @@ const db = mongoose.connect(url, {
     useUnifiedTopology: true
 }).then(() => {
     console.log("Connected to the mongodb database")
+}).catch((error) => {
+    console.log(error);
 });
 
 module.exports = db;
