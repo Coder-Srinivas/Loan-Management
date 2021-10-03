@@ -18,7 +18,8 @@ app.use(cors({
     origin: clientUrl,
     credentials: true
     }));
-app.use(helmet());
+
+app.use(helmet({ contentSecurityPolicy: false }));
 app.use(morgan('dev'))
 app.use(express.json());
 
