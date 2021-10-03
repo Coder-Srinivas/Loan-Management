@@ -9,7 +9,7 @@ const loanRouter = require('./routes/loan.route');
 require('dotenv').config()
 require('./database/connection');
 
-const clientUrl = process.env.DEV_REACT_URL || "https://loan-management.netlify.app";
+const clientUrl = process.env.DEV_REACT_URL;
 const app = express();
 
 //Middleware
@@ -33,6 +33,8 @@ if (process.env.NODE_ENV === "production") {
     });
 }
 
-app.listen(process.env.PORT || 8000, () => {
-    console.log("Listening on port 8000")
+const port = process.env.PORT || 8000;
+
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
 })

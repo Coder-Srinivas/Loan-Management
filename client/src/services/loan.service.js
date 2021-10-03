@@ -1,8 +1,7 @@
 const {axiosInstance} = require('../utilities/axiosInstance');
-const url = "https://srinivas-loan-management.herokuapp.com/";
 
 const createLoan = async (amount, emiDuration, startDate, fixed) => {
-    return await axiosInstance.post(url + 'new/loan', {
+    return await axiosInstance.post('new/loan', {
         amount,
         emiDuration,
         startDate,
@@ -15,7 +14,7 @@ const createLoan = async (amount, emiDuration, startDate, fixed) => {
 }
 
 const getLoans = async () => {
-    return await axiosInstance.get(url + 'loans').then((response) => {
+    return await axiosInstance.get('loans').then((response) => {
         return response.data;
     }).catch((error) => {
         return error.response.data;

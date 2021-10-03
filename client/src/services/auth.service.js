@@ -1,8 +1,7 @@
 const {axiosInstance} = require('../utilities/axiosInstance');
-const url = "https://srinivas-loan-management.herokuapp.com/";
 
 const login = async (email, password) => {
-    return await axiosInstance.post(url + 'login', {
+    return await axiosInstance.post('login', {
         email,
         password
     }).then((response) => {
@@ -13,21 +12,26 @@ const login = async (email, password) => {
 }
 
 const register = async (username, email, number, password, address) => {
-    return await axiosInstance.post(url + 'signup', {
+    return await axiosInstance.post('signup', {
         email,
         password,
         username,
         number,
         address
     }).then((response) => {
+        console.log(response)
         return response.data;
     }).catch((error) => {
-        return error.response.data;
+        if(error.response){
+            return error.response.data;
+        }else return {
+            message: "Try again"
+        }
     });
 }
 
 const logout = async () => {
-    return await axiosInstance.get(url + 'logout').then((response) => {
+    return await axiosInstance.get('logout').then((response) => {
         return response.data
     })
 }

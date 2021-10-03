@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const url = process.env.DEV_MONGO_URL;
+const url = process.env.NODE_ENV === "production" ? 
+process.env.DEV_MONGO_URL : process.env.PROD_MONGO_URL;
 const dbName = "loan-management";
 
 mongoose.set('useNewUrlParser', true);
