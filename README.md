@@ -1,4 +1,4 @@
-# Loan Mangement Application
+# Loan Management Application
 
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://srinivas-loan-management.herokuapp.com/)
 
@@ -6,7 +6,7 @@ An application designed to manage and sanction loans. Users can login and reques
 
 
 <p align="center"> 
-  <img src="https://socialify.git.ci/Coder-Srinivas/Loan-Mangement/image?description=1&font=Raleway&forks=1&language=1&owner=1&pattern=Charlie%20Brown&stargazers=1&theme=Dark" alt="Logo" width="75%">
+  <img src="https://socialify.git.ci/Coder-Srinivas/Loan-Management/image?description=1&font=Raleway&forks=1&language=1&owner=1&pattern=Charlie%20Brown&stargazers=1&theme=Dark" alt="Logo" width="75%">
 </p>
 
 ## Hit ⭐ if you like this project
