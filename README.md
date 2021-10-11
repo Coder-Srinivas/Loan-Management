@@ -25,6 +25,15 @@ Want to own this project? Follow the below steps :
 ```
 git clone https://github.com/your-github-username/Loan-Mangement.git
 ```
+- Run the below command to install dependencies on the server side
+```
+npm install
+```
+- Run the below command to install dependencies on the client side
+```
+cd client
+npm install
+```
 - Run the below command from the root directory to start the server
 ```
 npm run server
